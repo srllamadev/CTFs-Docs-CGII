@@ -1,0 +1,37 @@
+===============================================
+PISTAS DEL INFORMANTE - OPERACION ESPEJO ROJO
+===============================================
+
+--- PISTA 1 (Capa RSA) ---
+
+"Los gemelos guardan el secreto. 
+La diferencia entre los factores es menor que 200."
+
+-> Los primos p y q que componen n son muy cercanos entre si.
+-> Investiga el metodo de factorizacion de Fermat.
+
+--- PISTA 2 (Capa Hill) ---
+
+"La matriz clave fue encontrada en las notas del sospechoso.
+Es una matriz 3x3 con valores enteros positivos menores que 10.
+El determinante de la matriz es coprimo con 26.
+La matriz es: M = [[2, 1, 3], [5, 7, 4], [9, 2, 6]]."
+
+-> Para descifrar Hill, necesitas calcular la matriz inversa mod 26.
+-> Recuerda: M_inv = det(M)^(-1) * adj(M) mod 26
+
+--- PISTA 3 (Capa Transposicion) ---
+
+"La clave de transposicion es una palabra de 7 letras 
+relacionada con la fisica cuantica.
+El orden de las columnas se determina alfabeticamente 
+por las letras de la clave."
+
+-> Piensa en conceptos basicos de fisica cuantica de 7 letras.
+-> Ordena las letras de la clave alfabeticamente para determinar
+   el orden de lectura de las columnas.
+
+===============================================
+RECUERDA: El orden de descifrado es Capa 3 -> Capa 2 -> Capa 1
+(el ultimo cifrado aplicado es el primero en descifrarse)
+===============================================

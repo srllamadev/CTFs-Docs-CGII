@@ -1,0 +1,29 @@
+===============================================
+DATOS INTERCEPTADOS - OPERACION ESPEJO ROJO
+===============================================
+
+--- CAPA 1: RSA ---
+
+n = 1000000000000000000000000000310000000000000000000000000020889
+e = 65537
+c = 124362460198726234541394411860289841086379638401675728329293
+
+--- CAPA 2: CIFRADO HILL ---
+
+Ciphertext:
+FEBYDXNMDZXKVBKQPTPPTCHNJCKKXLANN
+
+Parametros conocidos:
+- Bloque: 3x3
+- Alfabeto: A-Z (26 letras, A=0, B=1, ..., Z=25)
+- La matriz clave es 3x3 con valores enteros positivos menores que 10
+
+--- CAPA 3: TRANSPOSICION COLUMNAR ---
+
+Ciphertext final:
+BZPNANBTKXYXTJNFMKCXDKPCNEDQHLXVPKX
+
+Longitud de clave: 7 letras
+La clave es una palabra relacionada con fisica cuantica
+
+===============================================
