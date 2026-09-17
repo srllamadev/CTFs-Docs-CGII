@@ -1,0 +1,51 @@
+============================================================
+DATOS INTERCEPTADOS - PROTOCOLO CERBERUS
+============================================================
+
+--- CAPA 1: RSA (Common Modulus) ---
+
+n  = 100000000006712542916867339521688560103987169326142141852927546739722177792723343
+e1 = 17
+e2 = 23
+c1 = 76182663331704153302610677079307837417643545552339609114238076443558029344088636
+c2 = 71999570678755885643091057320450206963414272066733379576310185038729015804289977
+
+--- CAPA 2: LFSR Stream Cipher ---
+
+Keystream (80 bits, hex):
+62324cd47c98929241ee
+
+Ciphertext (hex):
+277e009d2cccdbd11eaddf8fb71c97b69dd1
+
+Longitud del LFSR: 16 bits
+
+--- CAPA 3: Curva Elíptica ---
+
+Ecuacion: y^2 = x^3 + 2x + 3 (mod p)
+Primo p = 33554467
+Coeficientes: a = 2, b = 3
+
+Punto generador G = (1, 30337350)
+Clave publica P = (30117005, 2695286)
+Orden del subgrupo = 1009
+
+--- CAPA 4: SPN Block Cipher ---
+
+S-Box (4 bits, 16 entradas):
+[14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7]
+
+Permutacion (16 bits):
+[0, 4, 8, 12, 1, 5, 9, 13, 2, 6, 10, 14, 3, 7, 11, 15]
+
+Numero de rondas: 4
+Tamano de bloque: 16 bits
+
+Ciphertext del flag (hex):
+cc5248654cc0179fe9441ca694e458a19b04
+
+============================================================
+NOTA: El descifrado debe hacerse en orden inverso:
+Capa 4 -> Capa 3 -> Capa 2 -> Capa 1
+Cada capa proporciona informacion para la siguiente.
+============================================================

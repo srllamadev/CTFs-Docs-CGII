@@ -1,0 +1,79 @@
+============================================================
+PISTAS CRIPTOGRAFICAS - PROTOCOLO CERBERUS
+============================================================
+
+--- PISTA GENERAL ---
+
+"El protocolo CERBERUS tiene cuatro cabezas, cada una mas
+peligrosa que la anterior. Pero si conoces la tecnica
+adecuada para cada cabeza, caeran una por una."
+
+--- PISTA CAPA 1 (RSA) ---
+
+"Cuando dos mensajes comparten el mismo modulo pero tienen
+exponentes coprimos, el Teorema de Bezout es tu aliado.
+Busca a, b tales que a*e1 + b*e2 = gcd(e1, e2).
+El ataque se llama 'Common Modulus Attack'."
+
+Conceptos clave:
+- Algoritmo de Euclides Extendido
+- Identidad de Bezout
+- Exponentes coprimos: gcd(17, 23) = 1
+
+--- PISTA CAPA 2 (LFSR) ---
+
+"Un LFSR de longitud L puede ser completamente recuperado
+con 2L bits de keystream usando el algoritmo de
+Berlekamp-Massey. Una vez recuperado el polinomio y el
+estado inicial, puedes generar todo el keystream que
+necesites."
+
+Conceptos clave:
+- Algoritmo de Berlekamp-Massey
+- Complejidad lineal de secuencias
+- Polinomios primitivos sobre GF(2)
+
+--- PISTA CAPA 3 (ECC) ---
+
+"El problema del logaritmo discreto en curvas eliticas
+(ECDLP) es considerado dificil, pero solo cuando el orden
+del grupo es grande. Cuando el orden es pequeno, el
+algoritmo Baby-step Giant-step de Shanks es tu mejor
+arma. La complejidad es O(sqrt(n))."
+
+Conceptos clave:
+- ECDLP (Elliptic Curve Discrete Logarithm Problem)
+- Algoritmo Baby-step Giant-step
+- Orden de un punto en una curva eliptica
+- Operaciones de punto: suma, duplicacion, multiplicacion escalar
+
+--- PISTA CAPA 4 (SPN) ---
+
+"Un SPN (Substitution-Permutation Network) es la base de
+cifros modernos como AES. Pero con bloques de 16 bits y
+una clave de 16 bits, es vulnerable a fuerza bruta.
+Aunque si eres inteligente, no necesitaras fuerza bruta:
+la clave viene de la Capa 3."
+
+Conceptos clave:
+- S-Box y S-Box inversa
+- Permutacion y permutacion inversa
+- Expansion de clave
+- Descifrado SPN (operaciones en orden inverso)
+
+--- PISTA FINAL ---
+
+"El orden de descifrado es CRUCIAL:
+1. Capa 1 te da el polinomio del LFSR
+2. Capa 2 te da los parametros de la curva
+3. Capa 3 te da la clave del SPN
+4. Capa 4 te da el flag
+
+Cada plaintext intermedio es una pista para la siguiente capa."
+
+============================================================
+RECURSOS RECOMENDADOS:
+- Handbook of Applied Cryptography (Menezes, van Oorschot, Vanstone)
+- Cryptography Engineering (Ferguson, Schneier, Kohno)
+- Guide to Elliptic Curve Cryptography (Hankerson, Menezes, Vanstone)
+============================================================
